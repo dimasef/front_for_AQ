@@ -1,0 +1,17 @@
+a, md-list{
+  width: 100%;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav{
+  min-width: 15%;
+  height: auto;
+}
+.padding{
+  padding-left: 1.5em;
+  min-height: 500px;
+}
+

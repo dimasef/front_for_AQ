@@ -1,0 +1,40 @@
+<div >
+  <a target="_blank" href="{{item.url}}">
+    <img src="{{item.imageUrl}}" alt="{{item.name}}">
+    <div>
+      <h2>
+        <span class="md-headline">{{item.name}}</span>
+      </h2>
+    </div>
+    <div>
+      <p>
+        {{item.description}}
+      </p>
+    </div>
+  </a>
+  <div layout="row" layout-align="end center">
+    <div class="horizontal">
+      <div *ngFor="let tag of item.tags">
+          <div class="md-2-line">
+            {{tag.name}}
+          </div>
+      </div>
+    </div>
+  </div>
+  <div layout="row" layout-align="end center">
+    <div class="horizontal">
+      <div *ngIf="!item.isEditing" (click)="onEdit()" class="md-2-line">
+        Edit
+      </div>
+      <div *ngIf="item.isEditing" (click)="onConfirm()" class="md-2-line">
+        Confirm
+      </div>
+      <div *ngIf="item.isEditing" (click)="onCancel()" class="md-2-line">
+        Cancel
+      </div>
+      <div (click)="onDelete()">
+        Delete
+      </div>
+    </div>
+  </div>
+</div>

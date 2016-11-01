@@ -16,6 +16,7 @@ import {AuthModule} from "./auth/auth.module";
 import {QuestionsModule} from "./questions/questions.module";
 import {CategoriesModule} from "./categories/categories.module";
 import {AboutModule} from "./about/about.module";
+import {UiLibModule} from "./ui-lib.module";
 
 
 
@@ -32,8 +33,9 @@ import {AboutModule} from "./about/about.module";
     QuestionsModule,
     CategoriesModule,
     AboutModule,
-    AppRoutingModule,//this should be the least import cos this routing module has not found map
-    //MdRippleModule
+    AppRoutingModule,//this should be the lastest import cos this routing module has not found map
+    //MdRippleModule,
+    UiLibModule
   ],
   declarations: [
     AppComponent,

@@ -1,55 +1,38 @@
 
-<div>
-  <div class="sidenav"  mode="side" layout-padding>
-    <nav>
-      <div>
-        <a routerLink="/home" routerLinkActive="active">
-          <div class="md-2-line">
+<!--<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+        <a class="blog-nav-item" routerLink="/home" routerLinkActive="active">
             Home
-          </div>
         </a>
-        <a routerLink="/admin" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/admin" routerLinkActive="active">
             Admin
-          </div>
         </a>
 
-
-        <a routerLink="/categories" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/categories" routerLinkActive="active">
             Categories
-          </div>
         </a>
 
-        <a routerLink="/questions" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/questions" routerLinkActive="active">
             Questions
-          </div>
         </a>
-        <a routerLink="/auth" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/auth" routerLinkActive="active">
             Auth
-          </div>
         </a>
-        <a routerLink="/about" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/about" routerLinkActive="active">
             About
-          </div>
         </a>
-        <a routerLink="/bad" routerLinkActive="active">
-          <div class="md-2-line">
+        <a class="blog-nav-item" routerLink="/bad" routerLinkActive="active">
             Bad link
-          </div>
         </a>
-      </div>
     </nav>
 
   </div>
 
-  <div class="padding">
-    <router-outlet></router-outlet>
-  </div>
 
-</div>
+</div>-->
+<p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+<router-outlet></router-outlet>
+
 
 

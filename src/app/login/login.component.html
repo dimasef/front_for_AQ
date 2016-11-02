@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xs-12">
+      <h1>{{title}}</h1>
+      <h1 style="color: red" *ngIf="greetings">Get msg:{{greetings.greetings}}</h1>
+      <h1 style="color: green" *ngIf="greetingsPost">POST msg:{{greetingsPost.greetings}}</h1>
+      Faculties:
+    <button class="btn btn-success" (click)="showMsg()">Click</button>
+      <!--<ul>-->
+        <!--<li *ngFor="let faculty of faculties | async">-->
+          <!--{{faculty.name}}-->
+        <!--</li>-->
+      <!--</ul>-->
+  </div>
+</div>
+<!--<div class="row">-->
+  <!--<div class="col-xs-12">-->
+    <!--<ul class="list-group">-->
+      <!--<li class="list-group-item" *ngFor="let fac of faculties">-->
+        <!--<span class="badge">{{fac.university.name}}</span>-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">Faculty details</div>-->
+          <!--<div class="panel-body">-->
+            <!--<label for="facId">Id:</label>-->
+            <!--<span id="facId">{{fac.id}}</span>-->
+            <!--<label for="facName">Name:</label>-->
+            <!--<span id="facName">{{fac.name}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+  <!--<div class="col-xs-12">-->
+    <!--<button class="btn btn-success" (click)="performLogin()">Login</button>-->
+    <!--<div *ngIf="user">-->
+      <!--<h3>User email: </h3>&nbsp;-->
+      <!--{{user.email}}-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+  <!--<div class="col-xs-12">-->
+    <!--<ul class="list-group">-->
+      <!--<li class="list-group-item" *ngFor="let uni of universities">-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">University details</div>-->
+          <!--<div class="panel-body">-->
+            <!--<label for="uniId">Id:</label>-->
+            <!--<span id="uniId">{{uni.id}}</span>-->
+            <!--<label for="uniName">Name:</label>-->
+            <!--<span id="uniName">{{uni.name}}</span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->

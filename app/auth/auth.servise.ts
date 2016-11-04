@@ -9,21 +9,36 @@ import {CookieService} from 'angular2-cookie/core';
 @Injectable()
 export class AuthService {
   loginUrl = "http://localhost:8080/rest/open"
-  constructor(private http: Http, private cookieService:CookieService){}
-  logIn(user:User, rememberMe:boolean){
-    let csrf = this.cookieService.get("CSRF-TOKEN")
+
+  constructor(private http:Http, private cookieService:CookieService) {
+  }
+
+  logIn(user:User, rememberMe:boolean) {
+    let csrfToken = this.cookieService.get("CSRF-TOKEN")
+
     let headers = new Headers({
-      "X-CSRF-TOKEN": csrf
+      "X-CSRF-TOKEN": csrfToken
     })
     let options = {
       headers,
       withCredentials: true
     }
     return this.http.post(this.loginUrl, user, options)
-      .map((res:any)=>{debugger; return res.json()})
-      .catch((res:any)=>res.json())
-  }
-  signUp(user:User){
+      .map((res:any)=> {
+        return "success"
+      })
+      .catch((res:any)=> {
+        return "error"
+      })
 
+
+  }
+
+  signUp(user:User) {
+
+  }
+
+  getRequest() {
+    return this.http.get(this.loginUrl, {withCredentials: true})
   }
 }

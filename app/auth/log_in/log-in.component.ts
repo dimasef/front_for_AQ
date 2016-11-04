@@ -19,6 +19,7 @@ export class LogInComponent implements OnInit{
     this.user = new User()
     this.user.email = "username"
     this.user.password = "password"
+    this.authService.getRequest().subscribe(r=>r)
   }
   logIn(){
     console.log(this.user, "login", this.rememberMe?"remember":"no remember")

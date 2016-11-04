@@ -23,10 +23,13 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
+
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      'primeng':                    'node_modules/primeng'
+      'primeng':                    'node_modules/primeng',
+      'angular2-cookie':            'npm:angular2-cookie'
+
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -41,7 +44,12 @@
         main: './index.js',
         defaultExtension: 'js'
       },
-      'primeng': { defaultExtension: 'js' }
+      'primeng': { defaultExtension: 'js' },
+      'angular2-cookie': {
+        main: './core.js',
+        defaultExtension: 'js'
+      }
+
     }
   });
 })(this);

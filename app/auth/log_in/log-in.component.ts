@@ -24,7 +24,7 @@ export class LogInComponent implements OnInit{
     console.log(this.user, "login", this.rememberMe?"remember":"no remember")
     this.authService.logIn(this.user, this.rememberMe)
       .subscribe(
-        user=>this.status = JSON.stringify(user),
+        user=> {debugger; return this.status = JSON.stringify(user)},
         error=>this.status = JSON.stringify(error)
       )
   }

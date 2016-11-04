@@ -17,6 +17,7 @@ import {QuestionsModule} from "./questions/questions.module";
 import {CategoriesModule} from "./categories/categories.module";
 import {AboutModule} from "./about/about.module";
 import {UiLibModule} from "./ui-lib.module";
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
 
@@ -42,7 +43,7 @@ import {UiLibModule} from "./ui-lib.module";
     NotFoundComponent
   ],
   providers: [
-    AppService,
+    AppService, CookieService
   ],
   bootstrap: [AppComponent]
 })

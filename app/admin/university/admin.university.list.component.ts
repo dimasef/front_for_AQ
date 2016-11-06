@@ -50,7 +50,7 @@ export class AdminUniversityListComponent implements OnInit{
         }):[]
       return _university
       }
-    }
+
   loadData(){
     this.universityService
       .get()

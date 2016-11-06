@@ -1,0 +1,13 @@
+<div *ngIf="isEditing" class="tree-item">
+  <div class="name-text">
+    <input type="text" pInputText [(ngModel)]="data.name"/>
+  </div>
+  <div class="control-buttons">
+    <button pButton type="text" (click)="cancel()" label="Cancel"></button>
+    <button pButton type="text" (click)="confirm()" label="Confirm"></button>
+  </div>
+</div>
+<div *ngIf="!isEditing" class="tree-item">
+  <div class="name-text">{{data.name}}</div>
+  <button pButton type="text" (click)="setEditing()" label="Edit"></button>
+</div>

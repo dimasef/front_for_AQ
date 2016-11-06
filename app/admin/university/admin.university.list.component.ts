@@ -27,7 +27,8 @@ export class AdminUniversityListComponent implements OnInit{
         data: university,
         "collapsedIcon": "fa-graduation-cap",
         type: "university",
-        label: university.name
+        label: university.name,
+        children:null
       }
       _university.children =  university.faculties? university.faculties.map((faculty:Faculty)=>{
         let _faculty = {
@@ -36,6 +37,7 @@ export class AdminUniversityListComponent implements OnInit{
           label: faculty.name,
           "collapsedIcon": "fa-graduation-cap",
           type: "faculty",
+          children:null
         }
         _faculty.children = faculty.specialities?faculty.specialities.map((speciality:Speciality)=>{
               return {

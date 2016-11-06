@@ -19,7 +19,8 @@ export class AppComponent implements OnInit{
       {label: 'Categories', icon: 'fa-book', routerLink: ["categories"]},
       {label: 'About', icon: 'fa-support', routerLink: ["about"]},
       {label: 'Admin', icon: 'fa-twitter', routerLink: ["admin"]},
-      {label: 'Auth', icon: 'fa-twitter', routerLink:["auth"]}
+      {label: 'Auth', icon: 'fa-twitter', routerLink:["auth"]},
+      {label: 'Profile', icon: 'fa-book', routerLink: ["profile"]}
     ];
     var url = this.location.path().substr(1)
 

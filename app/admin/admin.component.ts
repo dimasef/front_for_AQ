@@ -17,8 +17,4 @@ export class AdminComponent {
   constructor(private appService:AppService){}
   title = 'Admin Component';
   message = "No Message";
-  handleRequest(){
-    this.appService.getHelloMessage()
-      .subscribe(mes=>this.message = mes)
-  }
 }

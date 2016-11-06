@@ -1,11 +1,22 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input , Output, EventEmitter} from '@angular/core';
+import {UniversityService} from "./university.service";
+import {TreeItemAddComponent} from "../tree-item-add/tree-item-add.component";
 
 @Component({
-    moduleId: module.id,
-    selector: 'AddUniversity',
-    template: `<h1>{{title}}</h1>`,
-    templateUrl: '.component.html'
+  moduleId: module.id,
+  selector: 'add-university',
+  templateUrl: './../tree-item-add/tree-item-add.component.html',
+  styleUrls: ['./../../admin.component.css']
 })
-export class AddUniversityComponent {
-    title = "Title"
+export class AddUniversityComponent extends TreeItemAddComponent{
+  title = "Add University"
+
+  constructor(service: UniversityService){
+    super(service)
+  }
+
+  get nodeType(){
+    return "university"
+  }
+
 }

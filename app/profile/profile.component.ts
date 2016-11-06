@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     moduleId: module.id,
-    selector: 'questions',
-    template: `<h1>{{title}}</h1>`,
-    //templateUrl: 'categories.component.html'
+    selector: 'profile',
+    templateUrl: 'profile.component.html'
 })
-export class QuestionsComponent {
+export class ProfileComponent {
     title = "Questions"
 }

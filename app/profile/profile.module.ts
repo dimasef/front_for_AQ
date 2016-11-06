@@ -1,14 +1,15 @@
 import {NgModule} from "@angular/core"
-import {QuestionsComponent} from "./profile.component.ts";
-import {QuestionsRoutingModule} from "./profile-routing.module.ts";
+import {ProfileComponent} from "./profile.component";
+import {ProfileRoutingModule} from "./profile-routing.module";
+import {ProfileService} from "./profile.service";
 
 
 @NgModule({
-    imports: [QuestionsRoutingModule],
-    declarations: [QuestionsComponent],
-    exports: [QuestionsRoutingModule],
-    providers: []
+    imports: [ProfileRoutingModule],
+    declarations: [ProfileComponent],
+    exports: [ProfileRoutingModule],
+    providers: [ProfileService]
 })
-export class QuestionsModule {
+export class ProfileModule {
 
 }

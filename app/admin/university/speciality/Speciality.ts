@@ -1,3 +1,4 @@
-/**
- * Created by user on 05.11.2016.
- */
+export class Speciality{
+  id:number;
+  name:string;
+}

@@ -1,3 +1,6 @@
-/**
- * Created by user on 05.11.2016.
- */
+import {Speciality} from "../speciality/Speciality";
+export class Faculty{
+  id:number;
+  name:string;
+  specialities:Speciality[]
+}

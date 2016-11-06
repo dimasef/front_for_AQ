@@ -1,14 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
 
 
+<p-inputSwitch onLabel="Horizontal" offLabel="Vertical" [(ngModel)]="isHorizontal"></p-inputSwitch>
+
+<div *ngIf="!isHorizontal">
+  <h3>Univ</h3>
+  <p-tree [value]="data"
+          width="100%"
+          (onNodeExpand)="loadNode($event)">
+    <template let-node  pTemplate type="university">
+      <university [node]="node"
+                  style="width:100%">
+      </university>
+    </template>
 
 
-</body>
-</html>
+
+    <template let-node pTemplate type="faculty">
+      <faculty [node]="node"
+               style="width:100%">
+      </faculty>
+    </template>
+
+
+
+    <template let-node pTemplate type="speciality">
+      <speciality [node]="node"
+                  style="width:100%">
+      </speciality>
+    </template>
+
+  </p-tree>
+</div>
+<div *ngIf="isHorizontal">
+  <h3>horizontal</h3>
+  <div *ngFor="let d of data">
+    <p-tree [value]="[d]"
+            width="100%"
+            layout="horizontal"
+            (onNodeExpand)="loadNode($event)">
+      <template let-node  pTemplate type="university">
+        <university [node]="node"
+                    style="width:100%">
+        </university>
+      </template>
+
+
+      <template let-node pTemplate type="faculty">
+        <faculty [node]="node"
+                 style="width:100%">
+        </faculty>
+      </template>
+
+
+      <template let-node pTemplate type="speciality">
+        <speciality [node]="node"
+                    style="width:100%">
+        </speciality>
+      </template>
+
+    </p-tree>
+  </div>
+</div>
+<add-university [node]="{children:data}"></add-university>
+
+<!--<template let-node  pTemplate type="default">
+    <university ([university])="node"
+                type="text"
+                style="width:100%">
+    </university>
+  </template>-->

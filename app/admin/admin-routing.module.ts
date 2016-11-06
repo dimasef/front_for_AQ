@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from "./admin.component";
 import {AdminQuestionsComponent} from "./questions/admin.questions.comonent";
 import {AdminCategoriesComponent} from "./categories/admin.categories.component";
+import {AdminUniversityListComponent} from "./university/admin.university.list.component";
 
 
 const routes= [
@@ -12,7 +13,7 @@ const routes= [
     children: [
       {
         path: '',
-        redirectTo: "questions",
+        redirectTo: "university",
       },
       {
         path: 'questions',
@@ -21,6 +22,10 @@ const routes= [
       {
         path: 'categories',
         component: AdminCategoriesComponent
+      },
+      {
+        path: 'university',
+        component: AdminUniversityListComponent
       }
     ]
   },
@@ -28,7 +33,7 @@ const routes= [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(<Routes>routes)],
   exports: [RouterModule]
 })
 export class AdminRoutingModule { }

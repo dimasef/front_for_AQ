@@ -1,32 +1,18 @@
 import {Injectable} from "@angular/core"
-import {Observable} from "../../../../node_modules/rxjs/Observable.d";
+import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
 import {OnInit} from "@angular/core";
-import {University} from "./../University";
+import {University} from "./University";
+import {Service} from "../../Service";
 
 
 @Injectable()
-export class UniversityService implements OnInit{
+export class UniversityService extends Service  implements OnInit {
   ngOnInit():void {
+  }
+  constructor(http:Http){
+    super(http)
     this.url = "http://localhost:8080/rest/universities"
   }
-  url:string;
-  constructor(private http:Http){
 
-  }
-  get():Observable<University[]>{
-    /*return this.http.get(this.url)
-      .map((res:any)=>res.json())*/
-    //noinspection TypeScriptUnresolvedFunction
-    return Observable.of([{
-      id: 1,
-      name: "Uni1 looooooooooooooooong"
-    }, {
-      id: 2,
-      name: "Uni2"
-    }, {
-      id: 3,
-      name: "Uni3"
-    }])
-  }
 }

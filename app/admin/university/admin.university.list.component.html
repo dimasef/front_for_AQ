@@ -62,7 +62,7 @@
     </p-tree>
   </div>
 </div>
-<add-university [node]="{children:data}"></add-university>
+<add-university [node]="{children:data, parent:{children:data}}"></add-university>
 
 <!--<template let-node  pTemplate type="default">
     <university ([university])="node"

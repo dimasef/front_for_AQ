@@ -30,7 +30,7 @@ export class TreeItemComponent {
         debugger
         this.node.parent.children = this.node.parent.children.filter(
           (data:any)=>{
-            return this.data.id !== data.id
+            return this.data.id !== data.data.id
           }
         )
       })

@@ -11,7 +11,7 @@
 <div *ngIf="!isEditing" class="tree-item">
   <div class="name-text">{{data.name}}</div>
   <div class="control-buttons">
-    <button pButton type="text" (click)="setEditing()" label="Edit"></button>
+    <button pButton type="text" (click)="setEditing()" icon="fa-pencil"></button>
     <add-speciality
       [node]="node"
       [parent]="{name:'faculty',value:{id:data.id}}"></add-speciality>

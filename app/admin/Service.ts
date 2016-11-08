@@ -1,5 +1,5 @@
 import {Observable} from "rxjs/Observable";
-import {Http} from "../../node_modules/@angular/http/src/http";
+import {Http} from "@angular/http";
 
 export class Service{
   url:string;
@@ -21,7 +21,7 @@ export class Service{
   }
   put(data:any){
     //noinspection TypeScriptUnresolvedFunction
-    return this.http.put(this.url+"/"+data.id, data)
+    return this.http.put(this.url/*+"/"+data.id*/, data)
       .map((res:any)=>res.json())
   }
 

@@ -19,6 +19,7 @@ import {AboutModule} from "./about/about.module";
 import {UiLibModule} from "./ui-lib.module";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import {RequestOptions} from "@angular/http";
+import {PrettyPrintPipe} from "./pretty-print.pipe";
 
 
 

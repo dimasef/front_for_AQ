@@ -6,6 +6,8 @@ import {ButtonModule} from 'primeng/primeng';
 import {CheckboxModule} from 'primeng/primeng';
 import {TreeModule, SharedModule } from 'primeng/primeng';
 import {InputSwitchModule, DialogModule} from 'primeng/primeng';
+import {AutoCompleteModule} from 'primeng/primeng';
+import {PrettyPrintPipe} from "./pretty-print.pipe";
 
 @NgModule({
     imports: [
@@ -17,8 +19,11 @@ import {InputSwitchModule, DialogModule} from 'primeng/primeng';
       TreeModule,
       SharedModule,
       InputSwitchModule,
-      DialogModule],
-    declarations: [],
+      DialogModule,
+      AutoCompleteModule],
+    declarations: [
+      PrettyPrintPipe
+    ],
     exports: [
       TabMenuModule,
       MenuModule,
@@ -28,7 +33,9 @@ import {InputSwitchModule, DialogModule} from 'primeng/primeng';
       TreeModule,
       SharedModule,
       InputSwitchModule,
-      DialogModule],
+      DialogModule,
+      AutoCompleteModule,
+      PrettyPrintPipe],
     providers: []
 })
 export class UiLibModule {

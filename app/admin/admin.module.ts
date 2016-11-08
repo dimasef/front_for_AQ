@@ -17,6 +17,10 @@ import {SpecialityService} from "./university/speciality/speciality.service";
 import {AddUniversityComponent} from "./university/university/add-university.component";
 import {AddSpecialityComponent} from "./university/speciality/add-specislity.component";
 import {AddFacultyComponent} from "./university/faculty/add-faculty.component";
+import {AdminUniversitySelectComponent} from "./university/univercity-select/admin.university-select.component";
+import {UniversitySelectComponent} from "./university/univercity-select/university-select.component";
+import {FacultySelectComponent} from "./university/univercity-select/faculty-select.component";
+import {SpecialitySelectComponent} from "./university/univercity-select/speciality-select.component";
 @NgModule({
   imports:[
     AdminRoutingModule,
@@ -34,7 +38,9 @@ import {AddFacultyComponent} from "./university/faculty/add-faculty.component";
     SpecialityComponent,
     AddUniversityComponent,
     AddSpecialityComponent,
-    AddFacultyComponent
+    AddFacultyComponent,
+    AdminUniversitySelectComponent,
+    UniversitySelectComponent,FacultySelectComponent,SpecialitySelectComponent
   ],
   exports:[
     AdminRoutingModule

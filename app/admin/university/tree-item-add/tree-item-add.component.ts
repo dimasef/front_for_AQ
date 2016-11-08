@@ -34,13 +34,12 @@ export class TreeItemAddComponent {
     this.service.post(this.data)
       .subscribe((data:any)=>{
         this.clear()
-        debugger
         if (!this.node.children){
           this.node.children = []
         }
         this.node.children.push({
           data: data,
-          label: data.name,
+          get label(){return this.data.name},
           parent: this.node,
           "collapsedIcon": "fa-graduation-cap",
           type: this.nodeType

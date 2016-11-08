@@ -7,7 +7,10 @@
   <h3>Univ</h3>
   <p-tree [value]="data"
           width="100%"
-          (onNodeExpand)="loadNode($event)">
+          (onNodeSelect)="nodeSelect($event)"
+          (onNodeUnselect)="nodeUnselect($event)"
+          selectionMode="single"
+          [(selection)]="selectedNode">
     <template let-node  pTemplate type="university">
       <university [node]="node"
                   style="width:100%">
@@ -38,7 +41,10 @@
     <p-tree [value]="[d]"
             width="100%"
             layout="horizontal"
-            (onNodeExpand)="loadNode($event)">
+            (onNodeSelect)="nodeSelect($event)"
+            (onNodeUnselect)="nodeUnselect($event)"
+            selectionMode="single"
+            [(selection)]="selectedNode">
       <template let-node  pTemplate type="university">
         <university [node]="node"
                     style="width:100%">
@@ -62,7 +68,7 @@
     </p-tree>
   </div>
 </div>
-<add-university [node]="{children:data, parent:{children:data}}"></add-university>
+<add-university [node]="{children:data}"></add-university>
 
 <!--<template let-node  pTemplate type="default">
     <university ([university])="node"
@@ -70,3 +76,6 @@
                 style="width:100%">
     </university>
   </template>-->
+
+
+<AdminUniversitySelect></AdminUniversitySelect>

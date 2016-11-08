@@ -1,3 +1,7 @@
 .ui-tree{
   width: 100%!important;
 }
+.ui-treenode{
+  margin-left: 3rem!important;
+  box-shadow: #888888 1px;
+}

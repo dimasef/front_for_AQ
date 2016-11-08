@@ -10,7 +10,7 @@
 </div>
 <div *ngIf="!isEditing" class="tree-item">
   <div class="name-text">{{data.name}}</div>
-  <button pButton type="text" (click)="setEditing()" label="Edit"></button>
+  <button pButton type="text" (click)="setEditing()" icon="fa-pencil"></button>
   <button pButton type="button"
           icon="fa-times" (click)="delete()"></button>
 </div>

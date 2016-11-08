@@ -19,20 +19,25 @@ export class TreeItemComponent {
     this.prevValue = Object.assign({}, this.data)
   }
   confirm(){
-    this.isEditing = false
+    /*let {id, name} = this.data
+    this.service.put({
+      id, name
+    })*/
     this.service.put(this.data)
+      .toPromise()
+      .then(()=>this.isEditing = false)
   }
   delete(){
-    debugger
     this.service.delete(this.data)
       .toPromise()
       .then(()=>{
-        debugger
-        this.node.parent.children = this.node.parent.children.filter(
-          (data:any)=>{
-            return this.data.id !== data.data.id
+        //delete element from array
+        //javascript sweet javascript
+        for (let i = 0; i < this.node.parent.children.length; i+=1){
+          if (this.node.parent.children[i].data.id === this.data.id){
+            this.node.parent.children.splice(i, 1)
           }
-        )
+        }
       })
   }
   cancel(){

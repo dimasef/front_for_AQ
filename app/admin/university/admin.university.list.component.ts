@@ -18,6 +18,7 @@ import {Speciality} from "./speciality/Speciality";
 export class AdminUniversityListComponent implements OnInit{
   universities:University[];
   isHorizontal:boolean = false
+  selectedNode:Object
   data: TreeNode[]
   ngOnInit():void {
     this.loadData()
@@ -26,26 +27,27 @@ export class AdminUniversityListComponent implements OnInit{
       let _university = {
         data: university,
         "collapsedIcon": "fa-graduation-cap",
-        type: "university",
-        label: university.name,
-        children: [{}]
+        _type: "university",
+        get label(){return this.data.name},
+        children: [{}],
+        parent: {}
       }
       _university.children =  university.faculties? university.faculties.map((faculty:Faculty)=>{
         let _faculty = {
           data: faculty,
           parent: _university,
-          label: faculty.name,
+          get label(){return this.data.name},
           "collapsedIcon": "fa-graduation-cap",
-          type: "faculty",
+          _type: "faculty",
           children: [{}]
         }
         _faculty.children = faculty.specialities?faculty.specialities.map((speciality:Speciality)=>{
               return {
                 data: speciality,
                 parent: _faculty,
-                label: speciality.name,
+                get label(){return this.data.name},
                 "collapsedIcon": "fa-graduation-cap",
-                type: "speciality"
+                _type: "speciality"
               }
             }):[]
         return _faculty
@@ -57,9 +59,12 @@ export class AdminUniversityListComponent implements OnInit{
     this.universityService
       .get()
       .subscribe((res:University[])=>{
-        debugger
         this.universities = res
         this.data = this.universities.map(this.universityToNode.bind(this))
+        let parent = {children: this.data};
+        this.data.forEach((u:any)=>{
+          u.parent = parent
+        })
       })
   }
   constructor(
@@ -67,6 +72,16 @@ export class AdminUniversityListComponent implements OnInit{
     ){}
   loadNode(event:any){
 
+  }
+  prevNode:any = {}
+  nodeSelect(event:any){
+    //noinspection TypeScriptUnresolvedVariable
+    delete this.prevNode.type;
+    this.prevNode = event.node
+    event.node.type = event.node._type
+  }
+  nodeUnselect(event:any){
+    delete event.node.type
   }
   method(){
     /*if (event.node){

@@ -14,7 +14,8 @@ import {AppService} from "../app.service";
 export class AdminComponent {
 
 
-  constructor(private appService:AppService){}
+  constructor(private appService:AppService) {}
+
   title = 'Admin Component';
   message = "No Message";
 }

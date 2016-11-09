@@ -1,4 +1,24 @@
-
-a{
-  //min-width: 100px;!important;
+.name-text{
+  max-width: 300px;
+  white-space: pre-wrap;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+}
+.tree-item{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  max-width: 300px;
+}
+.control-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.corner-label{
+  font-size: 50%;
+  opacity: 0.5;
+  position:absolute;
 }

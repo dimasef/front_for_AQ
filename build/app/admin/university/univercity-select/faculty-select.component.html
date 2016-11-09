@@ -1,0 +1,18 @@
+<span *ngIf="data && data.children">
+  <p-autoComplete field="label"
+                  [suggestions]="filtered"
+                  (completeMethod)="filter($event)" [size]="30"
+                  [minLength]="1"
+                  (onSelect)=onSelect($event)
+                  placeholder="Hint: type 'v' or 'f'" [dropdown]="true"
+                  (onDropdownClick)="handleDropdownClick()">
+    <template let-node>
+      {{node.data.name}}
+    </template>
+  </p-autoComplete>
+  <span *ngIf="current">
+      <faculty [node]="current"></faculty>
+  </span>
+</span>
+
+

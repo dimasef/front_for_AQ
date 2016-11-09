@@ -1,17 +1,21 @@
 import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
 
-export class Service{
+export class Service {
+
   url:string;
   http:Http;
+
   constructor(http:Http){
     this.http = http;
   }
+
   post(data:any){
     //noinspection TypeScriptUnresolvedFunction
     return this.http.post(this.url, data)
       .map((res:any)=>res.json())
   }
+
   get():Observable<any[]>{
     //noinspection TypeScriptUnresolvedFunction
     return this.http.get(this.url)
@@ -19,6 +23,7 @@ export class Service{
         return res.json()
       })
   }
+
   put(data:any){
     //noinspection TypeScriptUnresolvedFunction
     return this.http.put(this.url/*+"/"+data.id*/, data)
@@ -30,4 +35,5 @@ export class Service{
     return this.http.delete(this.url+"/"+data.id)
       .map((res:any)=>res.json())
   }
+
 }

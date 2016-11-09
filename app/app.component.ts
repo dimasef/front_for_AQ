@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {OnInit} from "@angular/core";
-import {MenuItem} from "primeng/primeng";
-import {Location} from '@angular/common';
+import { OnInit } from "@angular/core";
+import { MenuItem } from "primeng/primeng";
+import { Location } from '@angular/common';
 
 @Component({
   moduleId: module.id,
@@ -29,6 +29,6 @@ export class AppComponent implements OnInit{
 
   }
   activeItem: MenuItem;
-  items :MenuItem[];
-  title = 'App';
+  items: MenuItem[];
+  title = 'AQ - Ask the Question';
 }

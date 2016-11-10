@@ -2,8 +2,8 @@ import {Injectable} from "@angular/core"
 import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
 import {OnInit} from "@angular/core";
-import {University} from "./University";
 import {Service} from "../../Service";
+import {University} from "./University";
 
 
 @Injectable()

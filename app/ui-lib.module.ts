@@ -8,6 +8,7 @@ import {TreeModule, SharedModule } from 'primeng/primeng';
 import {InputSwitchModule, DialogModule} from 'primeng/primeng';
 import {AutoCompleteModule} from 'primeng/primeng';
 import {PrettyPrintPipe} from "./pretty-print.pipe";
+import {DataTableModule} from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import {PrettyPrintPipe} from "./pretty-print.pipe";
       SharedModule,
       InputSwitchModule,
       DialogModule,
-      AutoCompleteModule],
+      AutoCompleteModule,
+      DataTableModule],
     declarations: [
       PrettyPrintPipe
     ],
@@ -35,7 +37,8 @@ import {PrettyPrintPipe} from "./pretty-print.pipe";
       InputSwitchModule,
       DialogModule,
       AutoCompleteModule,
-      PrettyPrintPipe],
+      PrettyPrintPipe,
+    DataTableModule],
     providers: []
 })
 export class UiLibModule {

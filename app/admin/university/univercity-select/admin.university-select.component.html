@@ -1,6 +1,0 @@
-<div class="inline">
-<university-select [data]="data" (onChange)="setUniversity($event)"></university-select>
-<faculty-select *ngIf="university" [data]="university.children" (onChange)="setFaculty($event)"></faculty-select>
-<speciality-select *ngIf="faculty" [data]="faculty.children" (onChange)="setSpeciality($event)"></speciality-select>
-
-</div>

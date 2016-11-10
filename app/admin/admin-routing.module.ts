@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from "./admin.component";
 import {AdminQuestionsComponent} from "./questions/admin.questions.comonent";
 import {AdminCategoriesComponent} from "./categories/admin.categories.component";
-import {AdminUniversityListComponent} from "./university/admin.university.list.component";
+import {UniversityTableComponent} from "./tables/university/university.table.component";
+import {FacultyTableComponent} from "./tables/faculty/faculty.table.component";
+import {SpecialityTableComponent} from "./tables/speciality/speciality.table.component";
 
 
 const routes= [
@@ -13,7 +15,7 @@ const routes= [
     children: [
       {
         path: '',
-        redirectTo: "university",
+        redirectTo: "universities",
       },
       {
         path: 'questions',
@@ -24,8 +26,16 @@ const routes= [
         component: AdminCategoriesComponent
       },
       {
-        path: 'university',
-        component: AdminUniversityListComponent
+        path: 'universities',
+        component: UniversityTableComponent
+      },
+      {
+        path: 'faculties',
+        component: FacultyTableComponent
+      },
+      {
+        path: 'specialities',
+        component: SpecialityTableComponent
       }
     ]
   },

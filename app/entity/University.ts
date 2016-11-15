@@ -1,12 +1,12 @@
-import {Faculty} from "../faculty/Faculty";
-import {BaseEntity} from "../BaseEntity";
+import {Faculty} from "./Faculty";
+import {BaseEntity} from "./BaseEntity";
 export class University extends BaseEntity{
 
   constructor({id, name, faculties}){
     super()
     this.id = id;
-    this.name = name;
-    this.faculties = faculties && faculties.slice();
+    this.name = name || ""
+    this.faculties = (faculties && faculties.slice()) || [];
 
   }
   faculties:Faculty[];
@@ -18,3 +18,4 @@ export class University extends BaseEntity{
     this.faculties = value
   }
 }
+

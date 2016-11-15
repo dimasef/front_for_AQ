@@ -8,11 +8,11 @@ export class BaseEntity{
     return null
   }
   get parentName():string{
-    return this.parent.name;
+    return this.parent.name || "None";
   }
   set parentName(value){}
   get childrenNames():string{
-    return this.children.map(ch=>ch.name).join(", ")
+    return this.children.map(ch=>ch.name).join(", ") || "None"
   }
   set childrenNames(value){}
 }

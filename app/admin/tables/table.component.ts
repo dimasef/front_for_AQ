@@ -1,7 +1,7 @@
 
 
 import {Component, OnInit} from "@angular/core";
-import {Service} from "../Service";
+import {Service} from "../../service/Service";
 @Component({
   moduleId: module.id,
   templateUrl: 'table.component.html'
@@ -19,7 +19,7 @@ export class TableComponent implements OnInit {
 
   newData:boolean;
 
-  constructor(private service:Service) { }
+  constructor(public service:Service) { }
 
   ngOnInit() {
     this.service.get()
@@ -27,7 +27,7 @@ export class TableComponent implements OnInit {
         this.data = data
       })
   }
-  
+
   showDialogToAdd() {
     this.newData = true;
     this.current = this.clone({})
@@ -35,11 +35,11 @@ export class TableComponent implements OnInit {
   }
 
   save() {
-	debugger
     if(this.newData){
 	  this.service.post(this.current)
 		.toPromise()
-		.then(()=>{
+		.then((data:any)=>{
+	    this.current.id = data.id
 			this.data.push(this.current)
 			this.current = null;
 			this.displayDialog = false;
@@ -54,7 +54,7 @@ export class TableComponent implements OnInit {
 			this.displayDialog = false;
 		})
 	}
-    
+
   }
 
   delete() {
@@ -64,11 +64,10 @@ export class TableComponent implements OnInit {
 		this.current = null;
 		this.displayDialog = false;
 	})
-    
+
   }
 
   onRowSelect(event) {
-    debugger
     this.newData = false;
     this.current = this.clone(event.data);
     this.displayDialog = true;

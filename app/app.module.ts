@@ -20,6 +20,7 @@ import {UiLibModule} from "./ui-lib.module";
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import {RequestOptions} from "@angular/http";
 import {PrettyPrintPipe} from "./pretty-print.pipe";
+import {MessageService} from "./service/message.service";
 
 
 
@@ -45,7 +46,7 @@ import {PrettyPrintPipe} from "./pretty-print.pipe";
     NotFoundComponent
   ],
   providers: [
-    AppService, CookieService
+    AppService, CookieService, MessageService
   ],
   bootstrap: [AppComponent]
 })

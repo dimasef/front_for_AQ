@@ -1,5 +1,5 @@
 import {SelectComponent} from "../select/select.component";
-import {FacultyService} from "./faculty.service";
+import {FacultyService} from "../../../service/faculty.service";
 import {Component} from "@angular/core";
 @Component({
   moduleId: module.id,

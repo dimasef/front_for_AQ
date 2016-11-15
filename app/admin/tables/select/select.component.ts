@@ -1,5 +1,5 @@
 import {Input, Output, EventEmitter, OnInit} from "@angular/core";
-import {Service} from "../../Service";
+import {Service} from "../../../service/Service";
 export class SelectComponent implements OnInit{
   ngOnInit(): void {
     this.service.get()
@@ -8,14 +8,12 @@ export class SelectComponent implements OnInit{
         name: data.name
       }))))
       .subscribe(data=>{
-        debugger
         this.data = data
       })
 	if (!this.current){
-		debugger
 		this.current = this.isMultiple?[]:null;
 	}
-    
+
   }
   @Input()
   isMultiple:boolean
@@ -31,7 +29,6 @@ export class SelectComponent implements OnInit{
     this.filtered = []
     for(let i = 0; i < this.data.length; i++) {
       let node = this.data[i];
-	  debugger
       if(node.name.toLowerCase().indexOf(event.query.toLowerCase()) == 0) {
 		  var found;
 		  if (this.isMultiple){
@@ -42,20 +39,18 @@ export class SelectComponent implements OnInit{
 		  if (!found){
 			  this.filtered.push(node)
 		  }
-		  
+
       }
     }
   }
   handleDropdownClick() {
     //mimic remote call
-    debugger
     this.filtered = []
     setTimeout(()=>{
       this.filter({query: ""})
     }, 100)
   }
   onSelect(value:any){
-    debugger
     if (value.id && value.name){
       if (this.isMultiple){
         //this.current.push(value)

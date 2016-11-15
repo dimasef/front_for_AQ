@@ -1,7 +1,7 @@
 import {TableComponent} from "../table.component";
 import {Component} from "@angular/core";
-import {FacultyService} from "./faculty.service";
-import {Faculty} from "./Faculty";
+import {FacultyService} from "../../../service/faculty.service";
+import {Faculty} from "../../../entity/Faculty";
 @Component({
   moduleId: module.id,
   selector: "faculty-table",

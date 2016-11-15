@@ -1,14 +1,14 @@
-import {University} from "../university/University";
-import {Speciality} from "../speciality/Speciality";
-import {BaseEntity} from "../BaseEntity";
+import {University} from "./University";
+import {Speciality} from "./Speciality";
+import {BaseEntity} from "./BaseEntity";
 export class Faculty extends BaseEntity{
 
   constructor({id, name, university, specialities}){
     super()
     this.id = id;
-    this.name = name;
-    this.university = university;
-    this.specialities = specialities && specialities.slice();
+    this.name = name || ""
+    this.university = university || {}
+    this.specialities = (specialities && specialities.slice()) || [];
   }
   university:University;
   get parent(){

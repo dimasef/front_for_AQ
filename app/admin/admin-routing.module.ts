@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AdminComponent} from "./admin.component";
-import {AdminQuestionsComponent} from "./questions/admin.questions.comonent";
-import {AdminCategoriesComponent} from "./categories/admin.categories.component";
 import {UniversityTableComponent} from "./tables/university/university.table.component";
 import {FacultyTableComponent} from "./tables/faculty/faculty.table.component";
 import {SpecialityTableComponent} from "./tables/speciality/speciality.table.component";
+import {QuestionTableComponent} from "./tables/question/question.table.component";
 
 
 const routes= [
@@ -15,15 +14,7 @@ const routes= [
     children: [
       {
         path: '',
-        redirectTo: "universities",
-      },
-      {
-        path: 'questions',
-        component: AdminQuestionsComponent
-      },
-      {
-        path: 'categories',
-        component: AdminCategoriesComponent
+        redirectTo: "questions",
       },
       {
         path: 'universities',
@@ -36,6 +27,10 @@ const routes= [
       {
         path: 'specialities',
         component: SpecialityTableComponent
+      },
+      {
+        path: 'questions',
+        component: QuestionTableComponent
       }
     ]
   },

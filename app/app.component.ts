@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {OnInit} from "@angular/core";
 import {MenuItem} from "primeng/primeng";
 import {Location} from '@angular/common';
+import {MessageService} from "./service/message.service";
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,7 @@ import {Location} from '@angular/common';
   styleUrls: ['app.component.css'],
 })
 export class AppComponent implements OnInit{
-  constructor(private location: Location){
+  constructor(private location: Location, private messagesService:MessageService){
   }
   ngOnInit():void {
     this.items = [
@@ -25,9 +26,11 @@ export class AppComponent implements OnInit{
     var url = this.location.path().substr(1)
 
     this.activeItem = this.items.find(item=>url.startsWith(item.routerLink.join("/")))
-
-
   }
+  get messages(){
+    return this.messagesService.messages
+  }
+  set messages(value:any){}
   activeItem: MenuItem;
   items :MenuItem[];
   title = 'App';

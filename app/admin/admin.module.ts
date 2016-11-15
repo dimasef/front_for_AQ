@@ -3,19 +3,21 @@ import {NgModule} from "@angular/core"
 import {AdminComponent} from "./admin.component";
 import {FormsModule} from "@angular/forms"
 import {AdminRoutingModule} from "./admin-routing.module";
-import {AdminCategoriesComponent} from "./categories/admin.categories.component";
-import {AdminQuestionsComponent} from "./questions/admin.questions.comonent";
-import {UniversityService} from "./tables/university/university.service";
+import {UniversityService} from "../service/university.service";
 import {UiLibModule} from "../ui-lib.module";
-import {FacultyService} from "./tables/faculty/faculty.service";
+import {FacultyService} from "../service/faculty.service";
 import {BrowserModule} from "@angular/platform-browser";
-import {SpecialityService} from "./tables/speciality/speciality.service";
+import {SpecialityService} from "../service/speciality.service";
 import {UniversityTableComponent} from "./tables/university/university.table.component";
 import {FacultyTableComponent} from "./tables/faculty/faculty.table.component";
 import {SpecialityTableComponent} from "./tables/speciality/speciality.table.component";
 import {UniversitySelectComponent} from "./tables/university/university.select.component";
 import {FacultySelectComponent} from "./tables/faculty/faculty.select.component";
 import {SpecialitySelectComponent} from "./tables/speciality/speciality.select.component";
+import {QuestionService} from "../service/question.service";
+import {QuestionTableComponent} from "./tables/question/question.table.component";
+import {AnswerQuestionService} from "../service/answer-question.service";
+import {AnswerTableComponent} from "./tables/answer/answer.table.component";
 ;
 @NgModule({
   imports:[
@@ -25,15 +27,15 @@ import {SpecialitySelectComponent} from "./tables/speciality/speciality.select.c
     BrowserModule
   ],
   declarations:[
-    AdminCategoriesComponent,
-    AdminQuestionsComponent,
     AdminComponent,
     UniversityTableComponent,
     FacultyTableComponent,
     SpecialityTableComponent,
     UniversitySelectComponent,
     FacultySelectComponent,
-    SpecialitySelectComponent
+    SpecialitySelectComponent,
+    QuestionTableComponent,
+    AnswerTableComponent
   ],
   exports:[
     AdminRoutingModule
@@ -42,7 +44,8 @@ import {SpecialitySelectComponent} from "./tables/speciality/speciality.select.c
   providers:[
     UniversityService,
     FacultyService,
-    SpecialityService
+    SpecialityService,
+    QuestionService,
   ]
 })
 export class AdminModule{

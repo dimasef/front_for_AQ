@@ -1,12 +1,12 @@
-import {BaseEntity} from "../BaseEntity";
-import {Faculty} from "../faculty/Faculty";
+import {BaseEntity} from "./BaseEntity";
+import {Faculty} from "./Faculty";
 export class Speciality extends BaseEntity{
 
   constructor({id, name, faculty}){
     super()
     this.id = id;
-    this.name = name;
-    this.faculty = faculty;
+    this.name = name || ""
+    this.faculty = faculty || {};
 
   }
   faculty:Faculty;

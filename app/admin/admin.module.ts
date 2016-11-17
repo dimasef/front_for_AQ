@@ -3,24 +3,22 @@ import {NgModule} from "@angular/core"
 import {AdminComponent} from "./admin.component";
 import {FormsModule} from "@angular/forms"
 import {AdminRoutingModule} from "./admin-routing.module";
-import {AdminCategoriesComponent} from "./categories/admin.categories.component";
-import {AdminQuestionsComponent} from "./questions/admin.questions.comonent";
-import {UniversityService} from "./university/university/university.service";
-import {AdminUniversityListComponent} from "./university/admin.university.list.component";
+import {UniversityService} from "../service/university.service";
 import {UiLibModule} from "../ui-lib.module";
-import {UniversityComponent} from "./university/university/university.component";
-import {FacultyComponent} from "./university/faculty/faculty.component";
-import {FacultyService} from "./university/faculty/faculty.service";
+import {FacultyService} from "../service/faculty.service";
 import {BrowserModule} from "@angular/platform-browser";
-import {SpecialityComponent} from "./university/speciality/speciality.component";
-import {SpecialityService} from "./university/speciality/speciality.service";
-import {AddUniversityComponent} from "./university/university/add-university.component";
-import {AddSpecialityComponent} from "./university/speciality/add-specislity.component";
-import {AddFacultyComponent} from "./university/faculty/add-faculty.component";
-import {AdminUniversitySelectComponent} from "./university/univercity-select/admin.university-select.component";
-import {UniversitySelectComponent} from "./university/univercity-select/university-select.component";
-import {FacultySelectComponent} from "./university/univercity-select/faculty-select.component";
-import {SpecialitySelectComponent} from "./university/univercity-select/speciality-select.component";
+import {SpecialityService} from "../service/speciality.service";
+import {UniversityTableComponent} from "./tables/university/university.table.component";
+import {FacultyTableComponent} from "./tables/faculty/faculty.table.component";
+import {SpecialityTableComponent} from "./tables/speciality/speciality.table.component";
+import {UniversitySelectComponent} from "./tables/university/university.select.component";
+import {FacultySelectComponent} from "./tables/faculty/faculty.select.component";
+import {SpecialitySelectComponent} from "./tables/speciality/speciality.select.component";
+import {QuestionService} from "../service/question.service";
+import {QuestionTableComponent} from "./tables/question/question.table.component";
+import {AnswerQuestionService} from "../service/answer-question.service";
+import {AnswerTableComponent} from "./tables/answer/answer.table.component";
+;
 @NgModule({
   imports:[
     AdminRoutingModule,
@@ -29,18 +27,15 @@ import {SpecialitySelectComponent} from "./university/univercity-select/speciali
     BrowserModule
   ],
   declarations:[
-    AdminCategoriesComponent,
-    AdminQuestionsComponent,
     AdminComponent,
-    AdminUniversityListComponent,
-    UniversityComponent,
-    FacultyComponent,
-    SpecialityComponent,
-    AddUniversityComponent,
-    AddSpecialityComponent,
-    AddFacultyComponent,
-    AdminUniversitySelectComponent,
-    UniversitySelectComponent,FacultySelectComponent,SpecialitySelectComponent
+    UniversityTableComponent,
+    FacultyTableComponent,
+    SpecialityTableComponent,
+    UniversitySelectComponent,
+    FacultySelectComponent,
+    SpecialitySelectComponent,
+    QuestionTableComponent,
+    AnswerTableComponent
   ],
   exports:[
     AdminRoutingModule
@@ -49,7 +44,8 @@ import {SpecialitySelectComponent} from "./university/univercity-select/speciali
   providers:[
     UniversityService,
     FacultyService,
-    SpecialityService
+    SpecialityService,
+    QuestionService,
   ]
 })
 export class AdminModule{

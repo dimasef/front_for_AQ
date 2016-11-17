@@ -1,0 +1,11 @@
+<p-autoComplete field="name"
+                [(ngModel)]="current"
+                [multiple]="isMultiple"
+                [suggestions]="filtered"
+                (completeMethod)="filter($event)" [size]="30"
+                [minLength]="1"
+                (onSelect)=onSelect($event)
+                placeholder="Hint" [dropdown]="true"
+                (onDropdownClick)="handleDropdownClick()">
+
+</p-autoComplete>

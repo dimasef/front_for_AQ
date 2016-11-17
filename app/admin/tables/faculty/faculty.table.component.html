@@ -1,0 +1,62 @@
+<p-dataTable [value]="data"
+             selectionMode="single"
+             [(selection)]="selected"
+             (onRowSelect)="onRowSelect($event)"
+             [paginator]="true"
+             rows="15"
+             [responsive]="true">
+  <header>Faculty CRUD</header>
+  <p-column field="id"
+            header="Id"
+            [sortable]="true"
+            [filter]="true">
+
+  </p-column>
+  <p-column field="parentName"
+            header="University"
+            [sortable]="true"
+            [filter]="true">
+
+  </p-column>
+  <p-column field="name"
+            header="Faculty"
+            [sortable]="true"
+            [filter]="true">
+
+  </p-column>
+  <p-column field="childrenNames" header="Specialities" [sortable]="true"></p-column>
+  <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
+</p-dataTable>
+
+<p-dialog *ngIf="current" header="Faculty {{current.name}} Details" [(visible)]="displayDialog"
+          [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid table-add" *ngIf="current">
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="university">University</label></div>
+      <div class="ui-grid-col-8"><university-select id="university" [isMultiple]="false"
+                                                 (onChange)="setParent($event)"
+                                                  [current]="current.university"></university-select></div>
+
+    </div>
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="name">Name</label></div>
+      <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="current.name" /></div>
+    </div>
+
+    <div class="ui-grid-row">
+      <div class="ui-grid-col-4"><label for="specialities">Specialities</label></div>
+      <div class="ui-grid-col-8"><speciality-select id="specialities" [isMultiple]="true"
+                                                 (onChange)="setChildren($event)"
+                                                  [current]="current.specialities"></speciality-select></div>
+
+    </div>
+    <br/>
+  </div>
+  <br/>
+  <footer>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+      <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+    </div>
+  </footer>
+</p-dialog>

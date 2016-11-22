@@ -40,6 +40,8 @@
 </p-dataTable>
 
 <p-dialog *ngIf="current"
+          [width]="800"
+          [height]="500"
           header="Answer {{current.content}} Details"
           [(visible)]="displayDialog"
           [responsive]="true" showEffect="fade" [modal]="true">
@@ -53,7 +55,17 @@
         <input id="content" type="text" pInputText
                [(ngModel)]="current.content">
       </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-4"><label for="user">User</label></div>
+        <div class="ui-grid-col-8">
+          <user-select id="user"
+                             [isMultiple]="false"
+                             (onChange)="setUser($event)"
+                             [current]="current.user">
 
+          </user-select></div>
+
+      </div>
     </div>
 
     <br/>

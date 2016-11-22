@@ -1,0 +1,78 @@
+$large-screen: 1500px
+
+$medium-screen: 1280px
+
+$semi-medium-screen: 800px
+
+$small-screen: 380px
+
+.row
+  display: flex
+  flex-direction: row
+
+.col
+  display: flex
+  flex-direction: column
+
+.top-vertical
+  @extend .col
+  align-items: flex-start
+.root
+  @extend .col
+  margin: auto
+  @media (min-width: $large-screen)
+    width: $large-screen
+
+  @media (max-width: $large-screen) and (min-width: $medium-screen)
+    width: $medium-screen
+
+.general
+  width: 1200px
+  margin: auto
+  height: 280px
+  @extend .row
+  align-items: center
+  justify-content: space-between
+  .avatar
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 360px
+    height: 280px
+    img
+      max-width: 360px
+      max-height: 280px
+
+  .info
+    height: inherit
+    width: 540px
+    margin: 0 30px
+  .stats
+    width: 240px
+    background-color: grey
+    color: white
+    border-radius: 20px
+    height: 100px
+    align-items: center
+    justify-content: center
+    @extend .row
+    .questions
+      @extend .row
+      align-items: flex-end
+      margin: 15px
+    .answers
+      margin: 15px
+      @extend .col
+      .answers-all
+        align-items: flex-end
+        @extend .row
+      .answers-correct
+        align-items: flex-end
+        @extend .row
+
+.big-number
+  font-size: 24pt
+  padding: 0 5px
+.small-number
+  font-size: 18pt
+  padding: 0 4px

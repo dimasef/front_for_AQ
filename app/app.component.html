@@ -33,7 +33,13 @@
 </div>-->
 <p-growl [value]="messages"></p-growl>
 
-<p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+<div class="appbar">
+  <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+  <div>
+  <button pButton label="Ask the question" class="ask-the-question"></button>
+  <button pButton class="notifications" icon="fa-eye" label="Notifications"></button>
+  </div>
+</div>
 <router-outlet></router-outlet>
 
 

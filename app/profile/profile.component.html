@@ -1,1 +1,36 @@
-{{Title}}
+<div class="root">
+
+  <div class="general">
+    <div class="avatar">
+      <img src="{{user.avatar}}"/>
+    </div>
+    <div class="info">
+      <h1>{{user.firstName}} {{user.lastName}}</h1>
+      <div>
+        <small>{{user.email}}</small>
+      </div>
+      <button pButton icon="fa-edit" label="EDIT"></button>
+    </div>
+    <div class="stats">
+      <div class="questions">
+        <div class="big-number">{{questions.length}}</div>
+        <div>Questions</div>
+      </div>
+      <div class="answers">
+        <div class="answers-all">
+          <div class="small-number">{{answers.length}}</div>
+          <div>Answers</div>
+        </div>
+        <div class="answers-correct">
+          <div class="big-number">{{user.correctAnswersCount}}</div>
+          <div>Correct</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tabs">
+
+    <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
+    <router-outlet></router-outlet>
+  </div>
+</div>

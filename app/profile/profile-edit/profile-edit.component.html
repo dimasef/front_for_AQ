@@ -1,0 +1,67 @@
+<div class="root">
+  <div class="col">
+    <div class="inputs">
+      <div class="ui-g-12 ui-md-12 ui-lg-6 row">
+        <img class="avatar" src="{{user.avatar}}" alt="Bad link"/>
+
+
+        <div class="col width100">
+          <div class="label-center width100 margin-auto">
+            Avatar
+          </div>
+          <div class="input-center width100 margin-auto">
+            <input  type="text" pInputText [(ngModel)]="user.avatar" />
+          </div>
+        </div>
+
+      </div>
+      <div class="ui-g-12 ui-md-12 ui-lg-6 edit-item">
+        <div class="label">
+          Nickname
+        </div>
+        <div class="input">
+          <input  type="text" pInputText />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-12 ui-lg-6 edit-item">
+        <div class="label">
+          First Name
+        </div>
+        <div class="input">
+          <input  type="text" pInputText />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-12 ui-lg-6 edit-item">
+        <div class="label">
+          Last Name
+        </div>
+        <div class="input">
+          <input  type="text" pInputText />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-12 ui-lg-6 edit-item">
+        <div class="label">
+          Middle Name
+        </div>
+        <div class="input">
+          <input  type="text" pInputText />
+        </div>
+      </div>
+      <div class="ui-g-12 ui-md-12 ui-lg-6 edit-item">
+        <div class="label">
+          Birth Date
+        </div>
+        <div class="input">
+          <p-calendar [(ngModel)]="user.birthDate"></p-calendar>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+
+    </div>
+  </div>
+  <div class="tabs">
+
+
+  </div>
+</div>

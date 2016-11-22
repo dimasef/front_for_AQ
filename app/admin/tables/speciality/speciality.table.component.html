@@ -27,7 +27,10 @@
   <footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></footer>
 </p-dataTable>
 
-<p-dialog *ngIf="current" header="Spesiality {{current.name}} Details" [(visible)]="displayDialog"
+<p-dialog *ngIf="current"
+          [width]="800"
+          [height]="500"
+          header="Spesiality {{current.name}} Details" [(visible)]="displayDialog"
           [responsive]="true" showEffect="fade" [modal]="true">
   <div class="ui-grid ui-grid-responsive ui-fluid table-add" *ngIf="current">
     <div class="ui-grid-row">

@@ -18,6 +18,8 @@ import {QuestionService} from "../service/question.service";
 import {QuestionTableComponent} from "./tables/question/question.table.component";
 import {AnswerQuestionService} from "../service/answer-question.service";
 import {AnswerTableComponent} from "./tables/answer/answer.table.component";
+import {UserSelectComponent} from "./tables/user/user.select";
+import {UserService} from "../service/user.service";
 ;
 @NgModule({
   imports:[
@@ -35,7 +37,8 @@ import {AnswerTableComponent} from "./tables/answer/answer.table.component";
     FacultySelectComponent,
     SpecialitySelectComponent,
     QuestionTableComponent,
-    AnswerTableComponent
+    AnswerTableComponent,
+    UserSelectComponent
   ],
   exports:[
     AdminRoutingModule
@@ -46,6 +49,7 @@ import {AnswerTableComponent} from "./tables/answer/answer.table.component";
     FacultyService,
     SpecialityService,
     QuestionService,
+    UserService
   ]
 })
 export class AdminModule{

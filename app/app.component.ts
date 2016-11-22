@@ -16,8 +16,6 @@ export class AppComponent implements OnInit{
   ngOnInit():void {
     this.items = [
       {label: 'Home', icon: 'fa-bar-chart', routerLink:["home"]},
-      {label: 'Questions', icon: 'fa-calendar', routerLink: ["questions"]},
-      {label: 'Categories', icon: 'fa-book', routerLink: ["categories"]},
       {label: 'About', icon: 'fa-support', routerLink: ["about"]},
       {label: 'Admin', icon: 'fa-twitter', routerLink: ["admin"]},
       {label: 'Auth', icon: 'fa-twitter', routerLink:["auth"]},

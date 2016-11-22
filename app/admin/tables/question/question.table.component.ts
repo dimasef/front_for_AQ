@@ -16,4 +16,7 @@ export class QuestionTableComponent extends TableComponent{
     //noinspection TypeScriptValidateTypes
     return new Question(data)
   }
+  setUser(event){
+    this.current.user = event
+  }
 }

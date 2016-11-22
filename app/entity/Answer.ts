@@ -1,10 +1,14 @@
+import {User} from "./User";
 export class Answer{
   id:number
   content:string
-  userName: string
+  user: User
   constructor({id, content, user}){
     this.id = id;
     this.content = content;
-    this.userName = user && user.email
+    this.user = new User(user||{})
+  }
+  get userName(){
+    return this.user.email
   }
 }

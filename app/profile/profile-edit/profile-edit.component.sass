@@ -1,0 +1,45 @@
+.row
+  display: flex
+  flex-direction: row
+
+.col
+  display: flex
+  flex-direction: column
+
+.width100
+  width: 100%
+
+.margin-auto
+  margin: 0 auto
+.label, .input
+  display: flex
+  width: 50%
+  padding: 1rem
+
+.edit-item
+  @extend .row
+  box-shadow: grey 0 1px
+.label
+  justify-content: flex-end
+  align-items: center
+  font-size: 140%
+  white-space: nowrap
+
+.label-center
+  @extend .label
+  justify-content: center
+
+.input
+  justify-content: flex-start
+
+
+.input-center
+  @extend .input
+  justify-content: center
+.root
+  max-width: 1280px
+
+
+$avatar-size: 8rem
+.avatar
+  height: $avatar-size

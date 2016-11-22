@@ -5,3 +5,10 @@
   margin-left: 3rem!important;
   box-shadow: #888888 1px;
 }
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.ui-dialog-content{
+  height: 100%;
+}

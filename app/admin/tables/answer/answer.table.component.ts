@@ -15,10 +15,14 @@ export class AnswerTableComponent extends TableComponent{
   @Input()
   question:Question
   constructor(http:Http, messageService:MessageService){
-    super(new AnswerQuestionService(http, messageService, this))
+    super(null)
+    this.service = new AnswerQuestionService(http, messageService, this)
   }
   clone(data){
     //noinspection TypeScriptValidateTypes
     return new Answer(data)
+  }
+  setUser(event){
+    this.current.user = event
   }
 }

@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {clear: both}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+
+body {
+    background-color: #F0F8FF;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.container {
+    max-width: 960px;
+    padding: 0 5px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.content {
+    background-color: #fff;
+}
+.content h2 {
+    background: #20B2AA;
+    padding: 7px 50px;
+    margin-bottom: 25px;
+    color: #222;
+}
+.content article {
+    padding: 20px 50px;
+}
+
+#nav {
+    background-color: #20B2AA;
+    margin-bottom: 25px;
+    padding-left: 30px;
+}
+#nav a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #222;
+    padding: 10px;
+    width: 70px;
+    text-align: center;
+    margin: 0;
+}
+#nav a.active {
+    color: #E0FFFF;
+    background-color: #008B8B;
+}
+.btn-clear {
+    border: 1px solid #20B2AA;
+    border-left: 6px solid #20B2AA;
+    padding: 5px;
+    text-transform: uppercase;
+    background-color: #fff;
+    margin: 10px;
+    width: 100px;
+}
+.btn-clear:hover {
+    background-color: #20B2AA;
+    cursor: pointer;
+    color: #E0FFFF;
+}
+
+.btn-fill {
+    border: 1px solid #008B8B;
+    border-left: 6px solid #008B8B;
+    padding: 5px;
+    text-transform: uppercase;
+    background-color: #20B2AA;
+    margin: 10px;
+    width: 100px;
+}
+.btn-fill:hover {
+    background-color: #008B8B;
+    cursor: pointer;
+    color: #E0FFFF;
+}
+article nav {
+    display: inline-block;
+    margin: 20px;
+    border: 1px solid #008B8B;
+    border-radius: 3px;
+}
+article nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #008B8B;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    margin: 0;
+}
+article nav a:hover {
+    color: #222;
+}
+article nav a.active {
+    background-color: #008B8B;
+    color: #E0FFFF;
+}
+article nav a.active:hover {
+    color: #222;
+}
+article h3 {
+    color: #222;
+}
+.form-text {
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+.form-text:focus {
+    outline: 1px solid #008B8B;
+}

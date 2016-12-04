@@ -7,3 +7,62 @@
   </div>
 
 </div>
+
+<div class="feed">
+  <div class="feed-item" *ngFor="let question of questions">
+    <div class="question">
+      <div class="header">
+        <div></div>
+        <i class="opacity0" [class.opacity0]="question.isExpanded"
+           class="fa fa-arrow-circle-o-right"
+           aria-hidden="true"
+           (click)="question.setExpanded()"
+           (mouseover)="question.setExpanded()"></i>
+      </div>
+      <div class="main">
+        <div class="user">{{question.user.firstName}} {{question.user.lastName}}</div>
+        <div class="title">{{question.title}}</div>
+        <div class="categories">
+          <div class="categories-item" *ngFor="let category of question.categories">
+            {{category.name}}
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="row">
+          <div class="feed-icon">
+            <i (click)="question.setLiked(false)" *ngIf="question.isLiked" class="fa fa-heart" aria-hidden="true"></i>
+            <i (click)="question.setLiked(true)" *ngIf="!question.isLiked" class="fa fa-heart-o" aria-hidden="true"></i>
+            {{question.likesCount}}
+          </div>
+          <div class="feed-icon"><i class="fa fa-comment-o" aria-hidden="true"></i>{{question.answersCount}}</div>
+        </div>
+        <div class="date">{{question.creationDate|date}}</div>
+      </div>
+    </div>
+    <div *ngIf="question.isExpanded" class="answer-container">
+      <div class="answer" >
+        <div class="header">
+          <div class="best-answer-text">Best Answer</div>
+          <div></div>
+        </div>
+        <div class="main">
+          <div class="user">{{question.bestAnswer.user.firstName}} {{question.bestAnswer.user.lastName}}</div>
+          <div class="title">
+            {{question.bestAnswer.title}}
+          </div>
+
+        </div>
+        <div class="footer">
+          <div class="row">
+            <div class="feed-icon"><i class="fa fa-heart" aria-hidden="true"></i>{{question.bestAnswer.likesCount}}</div>
+          </div>
+          <div class="date">{{question.bestAnswer.creationDate|date}}</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

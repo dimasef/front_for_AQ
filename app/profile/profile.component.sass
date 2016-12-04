@@ -45,8 +45,26 @@ $small-screen: 380px
 
   .info
     height: inherit
+    display: flex
+    flex-direction: column
+    justify-content: center
     width: 540px
     margin: 0 30px
+  .name-container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    .button-container
+      display: flex
+      justify-content: center
+      flex-direction: column
+  .university-container
+    display: flex
+    flex-direction: column
+    .university
+      font-size: 120%
+    .faculty
+      opacity: 0.8
   .stats
     width: 240px
     background-color: grey

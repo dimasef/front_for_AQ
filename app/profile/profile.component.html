@@ -5,11 +5,14 @@
       <img src="{{user.avatar}}"/>
     </div>
     <div class="info">
-      <h1>{{user.firstName}} {{user.lastName}}</h1>
-      <div>
-        <small>{{user.email}}</small>
+      <div class="name-container">
+        <h1>{{user.firstName}} {{user.lastName}}</h1>
+        <div class="button-container"><button pButton icon="fa-edit"></button></div>
       </div>
-      <button pButton icon="fa-edit" label="EDIT"></button>
+      <div class="university-container">
+        <div class="university">{{user.university.name}}</div>
+        <div class="faculty">{{user.faculty.name}} ({{user.speciality.name}})</div>
+      </div>
     </div>
     <div class="stats">
       <div class="questions">

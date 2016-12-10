@@ -10,13 +10,38 @@ import {AutoCompleteModule} from 'primeng/primeng';
 import {PrettyPrintPipe} from "./pretty-print.pipe";
 import {DataTableModule, GrowlModule} from 'primeng/primeng';
 import {CalendarModule} from 'primeng/primeng';
+import {InputTextareaModule} from 'primeng/primeng';
+import {EditorModule} from 'primeng/primeng';
+import {OverlayPanelModule} from 'primeng/primeng';
+import {MdProgressCircleModule} from "@angular2-material/progress-circle"
+
+import { InfiniteScrollModule} from 'angular2-infinite-scroll';
+
+
+import {MdButtonToggle} from "@angular2-material/button-toggle";
+import {MdInput} from "@angular2-material/input";
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
+import {MdButtonModule} from '@angular2-material/button';
+import {MdRippleModule} from "@angular2-material/core"
+import {MdSlideToggleModule} from "@angular2-material/slide-toggle"
+import {MdCardModule} from "@angular2-material/card"
+
 
 @NgModule({
     imports: [
+      MdProgressCircleModule,
+      InfiniteScrollModule,
+      MdCardModule,
+      MdButtonModule,
+      MdSlideToggleModule,
+      MdRippleModule,
+      FormsModule, BrowserModule,
       TabMenuModule,
       MenuModule,
       InputTextModule,
       ButtonModule,
+      OverlayPanelModule,
       CheckboxModule,
       TreeModule,
       SharedModule,
@@ -25,11 +50,23 @@ import {CalendarModule} from 'primeng/primeng';
       AutoCompleteModule,
       DataTableModule,
       GrowlModule,
+      InputTextareaModule,
+      EditorModule
+      ,
     CalendarModule],
     declarations: [
-      PrettyPrintPipe
+      PrettyPrintPipe,MdInput, MdButtonToggle,
     ],
     exports: [
+      MdProgressCircleModule,
+      InfiniteScrollModule,
+      MdCardModule,
+      MdButtonModule,
+      MdRippleModule,MdSlideToggleModule,
+      FormsModule, BrowserModule,
+      MdInput, MdButtonToggle,
+      OverlayPanelModule,
+      EditorModule,
       TabMenuModule,
       MenuModule,
       InputTextModule,
@@ -41,6 +78,7 @@ import {CalendarModule} from 'primeng/primeng';
       DialogModule,
       AutoCompleteModule,
       PrettyPrintPipe,
+      InputTextareaModule,
     DataTableModule,
     GrowlModule,
     CalendarModule],

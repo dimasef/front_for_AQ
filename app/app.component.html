@@ -32,15 +32,41 @@
 
 </div>-->
 <p-growl [value]="messages"></p-growl>
+<div class="root">
+  <div class="sidebar">
+    <button md-button></button>
+    <h1>LOGO HERE</h1>
+    <a md-button *ngFor="let item of items"
+       class="routerLink"
+       routerLink="{{item.link}}" routerLinkActive="md-primary">{{item.label}}</a>
+  </div>
+  <div class="content">
+    <div class="top-content">
+      <div class="search">
+        <md-input placeholder="search here"></md-input>
+      </div>
+      <p-overlayPanel #op >
+        <div class="notifications-title">Notifications</div>
+        <notifications></notifications>
+      </p-overlayPanel>
+      <div class="right">
+        <md-input placeholder="email" [(ngModel)]="email"></md-input>
+        <md-input placeholder="password" [(ngModel)]="password"></md-input>
+        <button md-raised-button class="md-primary md-raised-button">Войти</button>
+        <button md-raised-button class="md-primary md-raised-button">Зарегистрироваться</button>
+        <i  (click)="op.toggle($event)" class="fa fa-bell-o notifications-icon bg-gray"
+           [class.bg-gray]="op.visible" aria-hidden="true">
+          <span class="count">{{unreadCount}}</span>
+        </i>
+      </div>
 
-<div class="appbar">
-  <p-tabMenu [model]="items" [activeItem]="activeItem"></p-tabMenu>
-  <div>
-  <button pButton label="Ask the question" class="ask-the-question"></button>
-  <button pButton class="notifications" icon="fa-eye" label="Notifications"></button>
+
+    </div>
+
+    <router-outlet></router-outlet>
   </div>
 </div>
-<router-outlet></router-outlet>
+
 
 
 

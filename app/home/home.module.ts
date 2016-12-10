@@ -4,9 +4,14 @@ import {HomeComponent} from "./home.component";
 import {ProfileModule} from "../profile/profile.module";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
+import {UiLibModule} from "../ui-lib.module";
+import {AskQuestionComponent} from "./ask-question/ask-question.component";
+import {FeedComponent} from "./feed/feed.component";
+import {NotificationsModule} from "../notifications/notifications.module";
+
 @NgModule({
-    imports: [HomeRoutingModule, ProfileModule, BrowserModule, FormsModule],
-    declarations: [HomeComponent],
+    imports: [HomeRoutingModule, ProfileModule, BrowserModule, FormsModule, UiLibModule, NotificationsModule],
+    declarations: [HomeComponent, AskQuestionComponent, FeedComponent],
     exports: [ProfileModule],
     providers: []
 })

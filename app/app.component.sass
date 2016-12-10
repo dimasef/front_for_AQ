@@ -1,15 +1,76 @@
 
 .ask-the-question
   margin: 20px 40px
-  transform: scale(1.5)
 
-.appbar
+.root
   display: flex
-  flex-wrap: nowrap
-  width: 100%
-  justify-content: space-around
   flex-direction: row
+.sidebar
+  width: 400px
 
 .notifications
   margin: 20px 40px
-  transform: scale(1.5)
+
+.content
+  display: flex
+  flex-direction: column
+  width: 100%
+  padding: 0 5%
+
+.top-content
+  display: flex
+  justify-content: space-between
+  height: 100px
+  width: 100%
+  .right
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+.notifications-icon
+  padding: 10px
+  border-radius: 50px
+  margin: 30px
+  transform: scale(2.5)
+  cursor: pointer
+  .count
+    width: auto
+    height: 10px
+    padding: 2px
+    border-radius: 30px
+    color: white
+    position: absolute
+    top: 8px
+    left: 22px
+    border: solid 2px white
+    font-size: 10px
+    font-weight: 700
+    z-index: 10
+    background-color: red
+    display: flex
+    justify-content: center
+    align-items: center
+.bg-gray
+  background-color: #eeeeee
+
+.notifications-icon:hover
+  @extend .bg-gray
+.notifications-title
+  width: 100%
+  display: flex
+  justify-content: flex-end
+  border-bottom: solid 3px grey
+  font-size: 140%
+
+.routerLink
+  width: 100%
+  padding: 1rem
+  font-size: inherit
+  display: flex
+  justify-content: flex-start
+  flex-direction: row
+.search
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center

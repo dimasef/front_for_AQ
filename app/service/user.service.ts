@@ -15,4 +15,7 @@ export class UserService extends Service{
   cast(value){
     return new User(value) || {name:"Error"}
   }
+  getCurrent(){
+    return new User({id:2})
+  }
 }

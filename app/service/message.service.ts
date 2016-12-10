@@ -11,4 +11,7 @@ export class MessageService{
 
     this.messages.push({severity:'error', summary:'Error Message', detail:text.toString()})
   }
+  message(text:any){
+    this.messages.push({severity: 'none', summary: text})
+  }
 }

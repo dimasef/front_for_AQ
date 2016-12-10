@@ -1,0 +1,8 @@
+<div class="root dark" [class.dark]="notification.isUnread">
+  <div class="title">
+    <span class="text">{{notification.title}}</span> <span class="date">{{notification.date|date}}</span>
+  </div>
+  <div class="content">
+    {{notification.content}}
+  </div>
+</div>

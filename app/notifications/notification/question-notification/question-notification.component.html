@@ -1,0 +1,12 @@
+<div class="root dark" [class.dark]="notification.isUnread">
+  <div class="title">
+    <span class="text">Someone answered your question</span> <span class="date">{{notification.date|date}}</span>
+  </div>
+  <div class="content">
+    <div class="info">
+      <div class="question">{{notification.question.title}}</div>
+      <div class="answer">{{notification.answer.content}}</div>
+    </div>
+
+  </div>
+</div>

@@ -3,6 +3,8 @@
  * Adjust as necessary for your application needs.
  */
 (function (global) {
+  const materialPackages  = [ 'core', 'button', 'icon', 'button-toggle', 'card', 'checkbox', 'grid-list', 'input', 'list', 'progress-bar', 'progress-circle', 'radio', 'sidenav', 'slide-toggle', 'tabs', 'toolbar'];
+
   System.config({
     paths: {
       // paths serve as alias
@@ -22,11 +24,22 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
-
+      '@angular2-material/toolbar': 'npm:@angular2-material/toolbar/toolbar.umd.js',
+      '@angular2-material/input': 'npm:@angular2-material/input/input.umd.js',
+      '@angular2-material/sidenav': 'npm:@angular2-material/sidenav/sidenav.umd.js',
+      '@angular2-material/core': 'npm:@angular2-material/core/core.umd.js',
+      '@angular2-material/checkbox': 'npm:@angular2-material/checkbox/checkbox.umd.js',
+      '@angular2-material/button-toggle': 'npm:@angular2-material/button-toggle/button-toggle.umd.js',
+      '@angular2-material/button': 'npm:@angular2-material/button/button.umd.js',
+      '@angular2-material/slide-toggle': 'npm:@angular2-material/slide-toggle/slide-toggle.umd.js',
+      '@angular2-material/card': "npm:@angular2-material/card/card.umd.js",
+      'ng2-material':              'npm:ng2-material',
+      '@angular/material': 'npm:@angular/material/material.umd.js',
+      '@angular2-material/progress-circle': 'npm:@angular2-material/progress-circle/progress-circle.umd.js',
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'angular2-infinite-scroll': 'npm:angular2-infinite-scroll',
       'primeng':                    'node_modules/primeng',
       'angular2-cookie':            'npm:angular2-cookie'
 
@@ -45,11 +58,16 @@
         defaultExtension: 'js'
       },
       'primeng': { defaultExtension: 'js' },
+      'angular2-infinite-scroll': {main: './angular2-infinite-scroll.js', defaultExtensions: 'js'},
       'angular2-cookie': {
         main: './core.js',
         defaultExtension: 'js'
-      }
+      },
+      'ng2-material': {main: './index.js', defaultExtension: 'js'}
+
 
     }
   });
 })(this);
+
+

@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>What u want know about?</h1>
+  <input class="textarea" valign='middle'
+            placeholder="ask question" pInputTextarea [(ngModel)]="question.title" rows="2" cols="50" wrap="physical">
+  <div class="button-container">
+    <div></div>
+    <button md-raised-button
+            class="md-primary big md-raised-button"
+            (click)="post()">Post</button>
+    <md-slide-toggle [(ngModel)]="showDetails">
+      Details
+    </md-slide-toggle>
+
+
+  </div>
+  <div *ngIf="showDetails" class="editor-container">
+    <div class="editor">
+      <p-editor [(ngModel)]="question.comment" [style]="{'height':'450px', 'font-size':'inherit'}"></p-editor>
+
+    </div>
+  </div>
+</div>
+
+

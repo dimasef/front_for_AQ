@@ -22,7 +22,7 @@ export class TableComponent implements OnInit {
   constructor(public service:Service) { }
 
   ngOnInit() {
-    this.service.get()
+    this.service.getSpecial()
       .subscribe(data=>{
         this.data = data
       })

@@ -7,3 +7,6 @@
 .margin-left{
   margin-left: 5rem;
 }
+.ui-dialog-content{
+  margin-bottom: -200px!important;
+}

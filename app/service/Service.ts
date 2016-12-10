@@ -5,7 +5,7 @@ import {MessageService} from "./message.service";
 export class Service{
   origin = "https://pure-mesa-13823.herokuapp.com/rest/"
   url:string;
-  constructor(private http:Http, private messagesService:MessageService){
+  constructor(public http:Http, public messagesService:MessageService){
   }
   cast(value){
     return value
@@ -18,16 +18,17 @@ export class Service{
         this.messagesService.error(e)
         return e
       })
-
   }
-  get():Observable<any[]>{
+  getSpecial():Observable<any[]>{
+    return this.get("/special")
+  }
+  get(url=""):Observable<any[]>{
     //noinspection TypeScriptUnresolvedFunction
-    return this.http.get(this.origin+this.url)
+    return this.http.get(this.origin+this.url+url)
       .map((res:any)=>{
         return res.json()
       })
       .map((array:any[])=>{
-        debugger
         return array.map(value => this.cast(value))
       })
       .catch(e=>{

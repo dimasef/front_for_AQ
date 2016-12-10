@@ -14,6 +14,9 @@ gulp.task("css", function(){
 
 })
 gulp.task("sass", function () {
+  gulp.src("styles.sass")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest(""))
   gulp.src("app/**/*.sass")
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest("build/app"))
@@ -22,6 +25,7 @@ gulp.task("watch", function(){
   gulp.watch(htmls, ["html"])
   gulp.watch(csses, ["css"])
   gulp.watch("app/**/*.sass", ["sass"])
+  gulp.watch("styles.sass", ["sass"])
 })
 gulp.task("default",["html", "css", "sass", "watch"], function(){
 

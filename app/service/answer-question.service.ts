@@ -17,7 +17,7 @@ export class AnswerQuestionService extends Service{
     return this.component.question
   }
   cast(value){
-    return new Question(value) || {name:"Error"}
+    return new Question(value)
   }
   get(){
     return Observable.of(this.question.answers)

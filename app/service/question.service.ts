@@ -13,6 +13,6 @@ export class QuestionService extends Service{
     this.url = "questions";
   }
   cast(value){
-    return new Question(value) || {name:"Error"}
+    return new Question(value)
   }
 }

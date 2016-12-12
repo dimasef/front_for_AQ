@@ -12,19 +12,31 @@ import {MessageService} from "../../service/message.service";
 })
 export class AskQuestionComponent implements OnInit{
   ngOnInit():void {
-    this.question = new Question({})
+    this.question = this.questionService.cast({})
   }
   constructor(private questionService:QuestionService,
               private userService:UserService,
               private messageService:MessageService){}
   question:Question;
   showDetails= false
+  confirmClose(isConfirmed){
+    if (isConfirmed){
+      this.messageService.message("Confirmed")
+    }else{
+      this.messageService.message("Canceled")
+    }
+  }
+  showDialog(dialog){
+    if (!dialog.active){
+      dialog.show()
+    }
+  }
   post(){
     this.question.user = this.userService.getCurrent()
     this.questionService.post(this.question)
       .subscribe(data=>{
         this.messageService.message("Your question posted!")
-        this.question = new Question({})
+        this.question = this.questionService.cast({})
         this.showDetails = false
       })
   }

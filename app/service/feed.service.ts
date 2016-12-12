@@ -15,7 +15,7 @@ export class FeedService extends Service{
     this.url = "feed";
   }
   cast(value){
-    return new Question(value) || {name:"Error"}
+    return new Question(value)
   }
   get({id=0, length=10}){
     return super.get(`/internal/${id?id+"/":""}${length?length:""}`)

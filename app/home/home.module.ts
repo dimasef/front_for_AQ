@@ -8,10 +8,11 @@ import {UiLibModule} from "../ui-lib.module";
 import {AskQuestionComponent} from "./ask-question/ask-question.component";
 import {FeedComponent} from "./feed/feed.component";
 import {NotificationsModule} from "../notifications/notifications.module";
+import {CategorySelectComponent} from "./category-select/category-select.component";
 
 @NgModule({
     imports: [HomeRoutingModule, ProfileModule, BrowserModule, FormsModule, UiLibModule, NotificationsModule],
-    declarations: [HomeComponent, AskQuestionComponent, FeedComponent],
+    declarations: [HomeComponent, AskQuestionComponent, FeedComponent, CategorySelectComponent],
     exports: [ProfileModule],
     providers: []
 })

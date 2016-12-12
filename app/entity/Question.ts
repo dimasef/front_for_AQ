@@ -10,7 +10,6 @@ export class Question{
   creationDate:Date
   answers: Answer[]
   isLiked:boolean
-  comment:string
   constructor({id, title, comment, user, answers, likes, creationTime}){
     this.id = id;
     this.title = title;

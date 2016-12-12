@@ -13,6 +13,6 @@ export class FacultyService extends Service{
     this.url = "faculties";
   }
   cast(value){
-    return new Faculty(value) || {name:"Error"}
+    return new Faculty(value)
   }
 }

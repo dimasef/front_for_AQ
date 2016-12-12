@@ -3,7 +3,6 @@
  * Adjust as necessary for your application needs.
  */
 (function (global) {
-  const materialPackages  = [ 'core', 'button', 'icon', 'button-toggle', 'card', 'checkbox', 'grid-list', 'input', 'list', 'progress-bar', 'progress-circle', 'radio', 'sidenav', 'slide-toggle', 'tabs', 'toolbar'];
 
   System.config({
     paths: {
@@ -40,6 +39,8 @@
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'angular2-infinite-scroll': 'npm:angular2-infinite-scroll',
+      'md-autocomplete': 'npm:md-autocomplete',
+
       'primeng':                    'node_modules/primeng',
       'angular2-cookie':            'npm:angular2-cookie'
 
@@ -53,6 +54,8 @@
       rxjs: {
         defaultExtension: 'js'
       },
+      'md-autocomplete':{main: './index.js', defaultExtension: 'js'},
+
       'angular2-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
@@ -63,6 +66,7 @@
         main: './core.js',
         defaultExtension: 'js'
       },
+
       'ng2-material': {main: './index.js', defaultExtension: 'js'}
 
 

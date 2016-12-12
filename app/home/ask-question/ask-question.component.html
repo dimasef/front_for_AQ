@@ -4,9 +4,15 @@
             placeholder="ask question" pInputTextarea [(ngModel)]="question.title" rows="2" cols="50" wrap="physical">
   <div class="button-container">
     <div></div>
+    <md-dialog #dialog (onClose)="confirmClose($event)">
+      <md-dialog-title>Would you like to delete your debt?</md-dialog-title>
+      <category-select></category-select>
+      <md-dialog-actions cancel="Cancel" ok="Post" ></md-dialog-actions>
+    </md-dialog>
     <button md-raised-button
             class="md-primary big md-raised-button"
-            (click)="post()">Post</button>
+            (click)="showDialog(dialog)">Ask
+    </button>
     <md-slide-toggle [(ngModel)]="showDetails">
       Details
     </md-slide-toggle>

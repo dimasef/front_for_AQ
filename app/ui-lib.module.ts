@@ -13,9 +13,12 @@ import {CalendarModule} from 'primeng/primeng';
 import {InputTextareaModule} from 'primeng/primeng';
 import {EditorModule} from 'primeng/primeng';
 import {OverlayPanelModule} from 'primeng/primeng';
-import {MdProgressCircleModule} from "@angular2-material/progress-circle"
 
 import { InfiniteScrollModule} from 'angular2-infinite-scroll';
+
+import {MdProgressCircleModule} from "@angular2-material/progress-circle"
+
+
 
 
 import {MdButtonToggle} from "@angular2-material/button-toggle";
@@ -26,7 +29,10 @@ import {MdButtonModule} from '@angular2-material/button';
 import {MdRippleModule} from "@angular2-material/core"
 import {MdSlideToggleModule} from "@angular2-material/slide-toggle"
 import {MdCardModule} from "@angular2-material/card"
-
+import {Overlay} from '@angular2-material/core';
+import {MdDialog, MdDialogActions, MdDialogTitle,
+  MATERIAL_BROWSER_PROVIDERS, MATERIAL_NODE_PROVIDERS,
+MdDialogPortal} from "ng2-material"
 
 @NgModule({
     imports: [
@@ -51,13 +57,15 @@ import {MdCardModule} from "@angular2-material/card"
       DataTableModule,
       GrowlModule,
       InputTextareaModule,
-      EditorModule
-      ,
+      EditorModule,
+
     CalendarModule],
     declarations: [
-      PrettyPrintPipe,MdInput, MdButtonToggle,
+      PrettyPrintPipe,MdInput, MdButtonToggle,MdDialog, MdDialogActions,
+      MdDialogTitle, MdDialogPortal
     ],
     exports: [
+      MdDialog, MdDialogActions, MdDialogTitle,MdDialogPortal,
       MdProgressCircleModule,
       InfiniteScrollModule,
       MdCardModule,
@@ -82,7 +90,11 @@ import {MdCardModule} from "@angular2-material/card"
     DataTableModule,
     GrowlModule,
     CalendarModule],
-    providers: []
+    providers: [
+      MATERIAL_BROWSER_PROVIDERS,
+      MATERIAL_NODE_PROVIDERS,
+      Overlay
+    ]
 })
 export class UiLibModule {
 

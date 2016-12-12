@@ -13,9 +13,9 @@ export class UserService extends Service{
     this.url = "users";
   }
   cast(value){
-    return new User(value) || {name:"Error"}
+    return new User(value)
   }
   getCurrent(){
-    return new User({id:2})
+    return this.cast({id:2})
   }
 }
